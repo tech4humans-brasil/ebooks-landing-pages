@@ -1,0 +1,44 @@
+HEADER
+Label:
+CASE REAL | PORTO + TECH FOR HUMANS
+Headline:
+O Agente de IA que resolve cobertura odontológica pelo WhatsApp
+Subtítulo:
+Desenvolvido pela Tech for Humans e já em produção na Porto. Veja como funciona na prática.
+CTA primário:
+Baixar o case completo
+
+CARDS DE RESULTADO
+
+81% das conversas resolvidas sem intervenção humana
+99,1% de taxa de sucesso nas ações do Agente
+Cobertura confirmada e clínica credenciada, em uma única conversa
+
+
+SEÇÃO VÍDEO + TEXTO
+Título:
+Consultar cobertura não devia depender de um PDF técnico.
+Texto:
+Ninguém fala "quero um tratamento endodôntico". As pessoas dizem "preciso fazer um canal". Esse desalinhamento sempre travou a consulta de cobertura odontológica.
+A Tech for Humans desenvolveu o Agente de Odonto, que traduz a linguagem do dia a dia para a cobertura correspondente e indica a clínica credenciada, direto no WhatsApp.
+No vídeo ao lado, veja a jornada completa em funcionamento.
+
+SEÇÃO NARRATIVA + FORMULÁRIO
+O QUE O AGENTE FAZ
+
+Traduz termos populares para a linguagem técnica do plano
+Confirma cobertura antes de indicar qualquer clínica
+Busca rede credenciada por proximidade em tempo real
+Entende texto e áudio, sem exigir troca de formato
+Direciona para atendimento humano fora do escopo de cobertura e rede credenciada
+
+Os resultados
+Em um mês de operação, o Agente reteve 81% das conversas sem nenhuma intervenção humana e acertou 99,1% das ações executadas. O volume que ainda chega ao atendimento humano é, em grande parte, pedidos fora do escopo do Agente, como agendamento de consulta e inclusão de dependentes.
+
+FORMULÁRIO
+Título:
+Acesse o case completo gratuitamente
+Campos:
+Nome / E-mail corporativo / Empresa / Telefone
+CTA:
+Baixar agora

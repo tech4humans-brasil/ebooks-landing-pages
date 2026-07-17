@@ -1,0 +1,89 @@
+[Porto Bank]
+Olá, Thigo!
+
+Vi que você deu o primeiro passo e simulou seu Consignado na Carteira de Trabalho Digital!
+
+Sou Consultor Virtual do Porto Bank e vou te ajudar a tirar seus planos do papel
+Conheça nossas vantagens do Empréstimo Consignado CLT*:
+
+📱 Sem burocracia: Contratação 100% digital.
+🤞 Tranquilidade: Parcelas fixas descontadas na folha.
+💵 Rapidez: Dinheiro na conta para usar como quiser.
+
+Que tal conferir sua oferta final agora mesmo?
+
+*Sujeito à aprovação de crédito. Consulte condições.
+
+[Cliente]
+Simular agora
+
+[Porto Bank]
+Não se preocupe, seus dados estão seguros com o Porto Bank. Ao seguir você:
+
+Autoriza o Porto Bank a consultar seus dados no SCR (Sistema Central do Brasil), conforme nosso Termo de Autorização - http://porto.vc/atc
+
+Está ciente de que seus dados pessoais serão tratados de acordo com a Política de Privacidade Porto Bank - http://porto.vc/dpc
+
+(Botões disponíveis: Autorizar e seguir | Sair)
+
+[Cliente]
+Autorizar e seguir
+
+[Porto Bank]
+Para simular seu Empréstimo Consignado CLT, confirme seu CPF.
+
+[Cliente]
+12345678910
+
+[Porto Bank]
+Muito bem! Temos esta oferta disponível para você 💵
+
+Valor liberado: R$ 14.439,58
+
+Parcelamento: 12x de R$ 1.460,77
+
+Taxa: 2,01% ao mês
+
+Desconto direto na folha
+
+Contratação 100% digital
+
+Vamos seguir com seu crédito?
+(Botões disponíveis: Sim, quero contratar | Outra condição)
+
+[Cliente]
+Consigo parcelar em 24x?
+
+[Porto Bank]
+Em quantas vezes deseja pagar? Para esse valor o mínimo de parcelas é 1 e o máximo 12.
+
+[Cliente]
+Não consigo pagar em 12, consigo em 24. Pode ser?
+
+[Porto Bank]
+Entendo, mas para este valor, o máximo de parcelas é 12. Você gostaria de seguir com a oferta de 12x? Ou deseja simular outra condição?
+
+[Cliente]
+Vamos simular outra condição então
+
+[Porto Bank]
+Tenho ofertas disponíveis para você entre R$ 140 e R$ 14.439,58. Qual valor você prefere?
+
+[Cliente]
+pode ser 7.000 em 10x?
+
+[Porto Bank]
+Nova oferta disponível 💵
+
+Valor liberado: R$ 7.000,00
+
+Parcelamento: 10x de R$ 832,00
+
+Taxa: 2.01% ao mês
+
+Desconto direto na folha
+
+Contratação 100% digital
+
+Vamos seguir com seu crédito?
+(Botões disponíveis: Sim, quero contratar | Alterar prazo | Escolher outro valor)

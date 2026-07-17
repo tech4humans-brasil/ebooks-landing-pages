@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23131C23'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Inter,sans-serif' font-size='10' font-weight='700' fill='%2348BA80' letter-spacing='-0.5'%3ET4H%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="_ds/t4h-design-system-27bba93d-6a73-429b-b3af-cebf21fb5b55/colors_and_type.css">
+  <link rel="stylesheet" href="_ds/t4h-design-system-27bba93d-6a73-429b-b3af-cebf21fb5b55/ui_kits/marketing/styles.css">
+  <script src="_ds/t4h-design-system-27bba93d-6a73-429b-b3af-cebf21fb5b55/_ds_bundle.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--font-sans); background: #F8F9FA; color: var(--fg-on-light); opacity: 0; transition: opacity .28s cubic-bezier(.2,.8,.2,1); }
+    a { color: inherit; text-decoration: none; }
+    input, select, textarea { font-family: inherit; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .55s cubic-bezier(.2,.8,.2,1) both; }
+    .d1 { animation-delay: .08s; } .d2 { animation-delay: .2s; }
+    .d3 { animation-delay: .32s; } .d4 { animation-delay: .44s; }
+    input::placeholder { color: rgba(19,28,35,.35); }
+    input:focus { outline: none; border-color: rgba(72,186,128,.7); }
+    @media (max-width: 768px) {
+      #t4h-nav { padding: 14px 24px !important; }
+      #t4h-nav .nav-cta { font-size: 12px !important; padding: 8px 16px !important; }
+      #t4h-hero-grid { grid-template-columns: 1fr !important; padding: 72px 24px 60px !important; gap: 40px !important; }
+      #t4h-metrics { flex-direction: row !important; gap: 12px !important; }
+      #t4h-metrics > div { flex: 1 !important; padding: 20px !important; }
+      #t4h-metrics > div > div:first-child { font-size: 38px !important; }
+      #t4h-video-section { padding: 64px 24px !important; }
+      #t4h-video-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      #form { padding: 64px 24px !important; }
+      #t4h-form-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+      #t4h-form-sticky { position: static !important; }
+      #t4h-footer { padding: 36px 24px !important; flex-direction: column !important; gap: 20px !important; align-items: flex-start !important; }
+    }
+
+    /* Mailchimp overrides — dark T4H theme */
+    #mc_embed_signup { background: transparent !important; font-family: var(--font-sans) !important; width: 100% !important; }
+    #mc_embed_signup h2 { display: none; }
+    #mc_embed_signup .indicates-required { display: none; }
+    #mc_embed_signup .mc-field-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; padding-bottom: 0; min-height: unset; }
+    #mc_embed_signup .mc-field-group label { font-size: 12px !important; font-weight: 600 !important; color: rgba(255,255,255,.45) !important; letter-spacing: .03em; text-transform: none; }
+    #mc_embed_signup .mc-field-group input { background: rgba(255,255,255,.06) !important; border: 1.5px solid rgba(255,255,255,.12) !important; border-radius: 10px !important; padding: 12px 16px !important; color: #fff !important; font-size: 14px !important; font-family: var(--font-sans) !important; width: 100% !important; box-sizing: border-box !important; height: auto !important; outline: none !important; transition: border-color .18s !important; }
+    #mc_embed_signup .mc-field-group input:focus { border-color: rgba(72,186,128,.65) !important; }
+    #mc_embed_signup .mc-field-group input::placeholder { color: rgba(255,255,255,.28) !important; }
+    #mc_embed_signup #mc-embedded-subscribe { background: #48BA80 !important; color: #131C23 !important; border: none !important; border-radius: 10px !important; font-family: var(--font-sans) !important; font-size: 15px !important; font-weight: 600 !important; padding: 14px 24px !important; width: 100% !important; cursor: pointer !important; margin-top: 6px !important; letter-spacing: -.005em !important; transition: background .2s !important; }
+    #mc_embed_signup #mc-embedded-subscribe:hover { background: #239A78 !important; }
+    #mc_embed_signup .clear { margin: 0 !important; }
+    #mc_embed_signup #mce-responses { margin: 0 !important; padding: 0 !important; }
+    #mc_embed_signup #mce-error-response { color: #ff6b6b !important; font-size: 13px !important; background: transparent !important; border: none !important; padding: 0 !important; margin-top: 8px !important; }
+    #mc_embed_signup #mce-success-response { color: #48BA80 !important; font-size: 13px !important; background: transparent !important; border: none !important; padding: 0 !important; margin-top: 8px !important; }
+    #mc_embed_signup_scroll { display: flex; flex-direction: column; gap: 0; }
+  </style>
+
+</helmet>
+
+<!-- NAV -->
+<nav id="t4h-nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px 64px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.06); background-color: #131C23">
+  <img src="assets/logo-white.png" alt="Tech for Humans" style="height: 53px; display: block; width: 131px">
+  <a href="#form" class="t4h-btn t4h-btn-primary nav-cta" style="font-size:13px;padding:10px 22px;">Baixar o case completo</a>
+</nav>
+
+<!-- HERO — bg-gradiente-claro -->
+<section style="position:relative;overflow:hidden;min-height:540px;display:flex;align-items:center;">
+  <div style="position:absolute;inset:0;background:url('assets/bg-gradiente-claro.png') center/cover no-repeat;"></div>
+  <!-- green glow overlay -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 95% 5%,rgba(72,186,128,.22) 0%,transparent 60%);pointer-events:none;"></div>
+  <div id="t4h-hero-grid" style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:100px 64px 96px;display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:center;">
+    <!-- copy -->
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <span class="fade-up d1" style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);width:fit-content;">CASE&nbsp; ·&nbsp;&nbsp;PORTO SAÚDE + TECH FOR HUMANS</span>
+      <h1 class="fade-up d2" style="margin:0;font-size:clamp(36px,4vw,56px);font-weight:700;line-height:1.06;letter-spacing:-.025em;color:#fff;max-width:660px;text-wrap:balance;">
+        O Agente de IA que resolve cobertura odontológica pelo <span style="color:#48BA80;">WhatsApp</span>
+      </h1>
+      <p class="fade-up d3" style="margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72);max-width:540px;">Desenvolvido pela Tech for Humans e já em produção na Porto Saúde. Veja como funciona na prática.</p>
+      <a href="#form" class="t4h-btn t4h-btn-primary t4h-btn-lg fade-up d4" style="width:fit-content;margin-top:6px;">
+        Baixar o case completo <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <!-- metric cards -->
+    <div id="t4h-metrics" class="fade-up d3" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border:1.5px solid rgba(72,186,128,.28);border-radius:16px;padding:28px;box-shadow:0 4px 28px rgba(19,28,35,.07);">
+        <div style="font-size:54px;font-weight:800;letter-spacing:-.04em;color:#131C23;line-height:1;">81<span style="color:#48BA80;">%</span></div>
+        <div style="font-size:14px;color:rgba(19,28,35,.58);line-height:1.45;margin-top:8px;">das conversas resolvidas sem intervenção humana</div>
+      </div>
+      <div style="background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border:1.5px solid rgba(72,186,128,.2);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(19,28,35,.06);">
+        <div style="font-size:54px;font-weight:800;letter-spacing:-.04em;color:#131C23;line-height:1;">99,1<span style="color:#48BA80;">%</span></div>
+        <div style="font-size:14px;color:rgba(19,28,35,.58);line-height:1.45;margin-top:8px;">de taxa de sucesso nas ações do Agente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO + TEXT — fundo claro -->
+<section id="t4h-video-section" style="position:relative;overflow:hidden;background:#F8F9FA;padding:100px 64px;">
+  <!-- green blurs -->
+  <div style="position:absolute;width:560px;height:560px;right:-120px;top:-140px;background:radial-gradient(circle,rgba(72,186,128,.2) 0%,transparent 65%);filter:blur(48px);pointer-events:none;"></div>
+  <div style="position:absolute;width:380px;height:380px;left:-80px;bottom:-100px;background:radial-gradient(circle,rgba(72,186,128,.14) 0%,transparent 65%);filter:blur(40px);pointer-events:none;"></div>
+
+  <div id="t4h-video-grid" style="position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <!-- Video placeholder -->
+    <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 8px 40px rgba(19,28,35,.1);border:1.5px solid rgba(72,186,128,.25);">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4s8UxgGkYns" title="Agente de Odonto — demonstração" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="display:block;width:100%;height:100%;"></iframe>
+    </div>
+    <!-- Text -->
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#239A78;">O Problema</span>
+      <h2 style="margin:0;font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.15;color:#131C23;text-wrap:balance;">
+        Consultar cobertura não devia depender de um PDF técnico.
+      </h2>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(19,28,35,.65);">
+          Ninguém fala "quero um tratamento endodôntico". As pessoas dizem "preciso fazer um canal". Esse desalinhamento sempre travou a consulta de cobertura odontológica.
+        </p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(19,28,35,.65);">
+          A Tech for Humans desenvolveu o <span style="color: rgb(35, 154, 120); font-weight: 600;">Agente de IA</span>&nbsp;que traduz a linguagem do dia a dia para a cobertura correspondente e indica a clínica credenciada, direto no WhatsApp.
+        </p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(19,28,35,.4);">
+          No vídeo ao lado, veja a jornada completa em funcionamento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NARRATIVE + FORM — tema escuro com raios -->
+<section id="form" style="position:relative;overflow:hidden;background:#051721;color:#fff;padding:100px 64px;">
+  <div style="position:absolute;inset:0;background:url('assets/bg-raios-claro.png') center/cover no-repeat;opacity:.18;mix-blend-mode:screen;pointer-events:none;"></div>
+  <div style="position:absolute;width:600px;height:600px;left:-140px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(72,186,128,.15) 0%,transparent 65%);filter:blur(60px);pointer-events:none;"></div>
+  <div style="position:absolute;width:400px;height:400px;right:-80px;bottom:-60px;background:radial-gradient(circle,rgba(72,186,128,.1) 0%,transparent 65%);filter:blur(48px);pointer-events:none;"></div>
+
+  <div id="t4h-form-grid" style="position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:start;">
+
+    <!-- Left: capacidades + resultados -->
+    <div style="display:flex;flex-direction:column;gap:48px;">
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#48BA80;">O que o Agente faz</span>
+        <h2 style="margin:0;font-size:clamp(26px,2.4vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.2;color:#fff;">
+          Cinco capacidades em uma única conversa.
+        </h2>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+            <span style="min-width:4px;height:18px;background:#48BA80;border-radius:2px;margin-top:2px;flex-shrink:0;display:block;"></span>
+            <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);">Traduz termos populares para a linguagem técnica do plano</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+            <span style="min-width:4px;height:18px;background:#48BA80;border-radius:2px;margin-top:2px;flex-shrink:0;display:block;"></span>
+            <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);">Confirma cobertura antes de indicar qualquer clínica</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+            <span style="min-width:4px;height:18px;background:#48BA80;border-radius:2px;margin-top:2px;flex-shrink:0;display:block;"></span>
+            <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);">Busca rede credenciada por proximidade em tempo real</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+            <span style="min-width:4px;height:18px;background:#48BA80;border-radius:2px;margin-top:2px;flex-shrink:0;display:block;"></span>
+            <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);">Entende texto e áudio, sem exigir troca de formato</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+            <span style="min-width:4px;height:18px;background:#48BA80;border-radius:2px;margin-top:2px;flex-shrink:0;display:block;"></span>
+            <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);">Direciona para atendimento humano fora do escopo de cobertura e rede credenciada</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results callout -->
+      <div style="border-radius:12px;padding:24px 28px;background:rgba(72,186,128,.08);border:1px solid rgba(72,186,128,.2);border-left:4px solid #48BA80;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#48BA80;margin-bottom:14px;">Os resultados</div>
+        <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(255,255,255,.75);">
+          Em um mês de operação, o Agente reteve <strong style="color: rgb(255, 255, 255); font-weight: 700;">81% das conversas</strong> sem nenhuma intervenção humana e acertou <strong style="color: rgb(255, 255, 255); font-weight: 700;">99,1% das ações</strong> executadas.</p>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div id="t4h-form-sticky" style="position:sticky;top:88px;">
+      <div style="background:#0B1A22;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:26px;box-shadow:0 8px 48px rgba(0,0,0,.3);">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2;color:#fff;">Acesse o case completo gratuitamente</h3>
+          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.45);line-height:1.5;">Baixe o ebook com os detalhes técnicos, arquitetura e resultados completos.</p>
+        </div>
+        <div id="mc_embed_signup">
+          <!-- Form state -->
+          <div id="odonto-form-wrap">
+            <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate="">
+              <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                  <label for="mce-FNAME">Nome</label>
+                  <input type="text" name="FNAME" id="mce-FNAME" placeholder="Seu nome completo">
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL">E-mail corporativo <span style="color:#48BA80;">*</span></label>
+                  <input type="email" name="EMAIL" id="mce-EMAIL" required="" placeholder="voce@empresa.com">
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-COMPANY">Empresa</label>
+                  <input type="text" name="COMPANY" id="mce-COMPANY" placeholder="Nome da sua empresa">
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-PHONE">Telefone</label>
+                  <input type="text" name="PHONE" id="mce-PHONE" placeholder="(11) 99999-9999">
+                </div>
+                <div hidden=""><input type="hidden" name="tags" value="4509550"></div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none;color:#ff6b6b;font-size:13px;margin-bottom:10px;"></div>
+                </div>
+                <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_26535a63acbc5fe8074ceb74c_24ec7ff9d6" tabindex="-1" value=""></div>
+                <div class="clear">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Baixar agora →">
+                </div>
+                <p style="margin:8px 0 0;font-size:11px;color:rgba(255,255,255,.28);line-height:1.5;text-align:center;">Seus dados são protegidos. Não compartilhamos com terceiros.</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Success state (hidden initially) -->
+          <div id="odonto-success" style="display:none;flex-direction:column;gap:24px;align-items:center;text-align:center;padding:16px 0;">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(72,186,128,.15);border:1.5px solid rgba(72,186,128,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#48BA80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <p style="margin:0;font-size:16px;line-height:1.65;color:rgba(255,255,255,.85);">Obrigado por enviar o formulário. O ebook já foi enviado para o seu e-mail, mas você também pode baixá-lo por aqui:</p>
+            </div>
+            <a id="odonto-download-btn" href="https://cdn.prod.website-files.com/65155fabb679475d43638cde/6a5a7596f59fdbb6f89e6ac1_Agente%20de%20IA%20que%20resolve%20cobertura%20odontol%C3%B3gica%20via%20WhatsApp%20-%20T4H.pdf" download="" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:999px;background:#48BA80;color:#051721;font-size:14px;font-weight:700;letter-spacing:.01em;text-decoration:none;transition:background .2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Baixar o ebook
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="t4h-footer" style="background:#131C23;padding:48px 64px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;">
+  <img src="assets/logo-white.png" alt="Tech for Humans" style="height: 48px; display: block; opacity: .6; width: 120px">
+  <div style="display:flex;align-items:center;gap:24px;">
+    <span style="font-size:13px;color:rgba(255,255,255,.28);">© 2025 Tech for Humans.</span>
+    <a href="https://www.techforhumans.com.br/politica-de-privacidade" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;" onMouseOver="this.style.color='rgba(255,255,255,.75)'" onMouseOut="this.style.color='rgba(255,255,255,.4)'">Política de privacidade</a>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail" data-bg-color="#051721">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#051721"/>
+    <rect x="80" y="120" width="520" height="16" rx="8" fill="rgba(72,186,128,.25)"/>
+    <rect x="80" y="160" width="420" height="52" rx="10" fill="rgba(255,255,255,.12)"/>
+    <rect x="80" y="228" width="380" height="52" rx="10" fill="rgba(255,255,255,.08)"/>
+    <rect x="80" y="296" width="440" height="52" rx="10" fill="rgba(255,255,255,.06)"/>
+    <rect x="680" y="100" width="440" height="260" rx="16" fill="rgba(72,186,128,.15)" stroke="#48BA80" stroke-width="1.5"/>
+    <rect x="700" y="120" width="160" height="60" rx="10" fill="rgba(255,255,255,.18)"/>
+    <text x="780" y="162" font-family="Inter,sans-serif" font-size="40" font-weight="800" fill="#fff" text-anchor="middle">81%</text>
+    <rect x="700" y="200" width="160" height="60" rx="10" fill="rgba(255,255,255,.12)"/>
+    <text x="780" y="242" font-family="Inter,sans-serif" font-size="40" font-weight="800" fill="#48BA80" text-anchor="middle">99,1%</text>
+    <rect x="80" y="560" width="1040" height="2" rx="1" fill="rgba(255,255,255,.06)"/>
+    <circle cx="600" cy="680" r="32" fill="rgba(72,186,128,.2)" stroke="#48BA80" stroke-width="1.5"/>
+    <text x="600" y="690" font-family="Inter,sans-serif" font-size="28" font-weight="700" fill="#48BA80" text-anchor="middle">T4H</text>
+  </svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    document.body.style.opacity = '1';
+    var form = document.getElementById('mc-embedded-subscribe-form');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('mce-EMAIL');
+      if (!email || !email.value) {
+        document.getElementById('mce-error-response').textContent = 'Por favor, informe seu e-mail.';
+        document.getElementById('mce-error-response').style.display = 'block';
+        return;
+      }
+      var btn = document.getElementById('mc-embedded-subscribe');
+      btn.value = 'Enviando…';
+      btn.disabled = true;
+      var params = new URLSearchParams();
+      params.append('EMAIL', document.getElementById('mce-EMAIL').value);
+      params.append('FNAME', (document.getElementById('mce-FNAME') || {value:''}).value);
+      params.append('COMPANY', (document.getElementById('mce-COMPANY') || {value:''}).value);
+      params.append('PHONE', (document.getElementById('mce-PHONE') || {value:''}).value);
+      params.append('tags', '4509550');
+      params.append('b_26535a63acbc5fe8074ceb74c_24ec7ff9d6', '');
+      var cbName = 'mc_cb_' + Date.now();
+      params.append('c', cbName);
+      function showSuccess() {
+        document.getElementById('odonto-form-wrap').style.display = 'none';
+        document.getElementById('odonto-success').style.display = 'flex';
+      }
+      window[cbName] = function() { delete window[cbName]; showSuccess(); };
+      var script = document.createElement('script');
+      script.src = 'https://techforhumans.us5.list-manage.com/subscribe/post-json?u=26535a63acbc5fe8074ceb74c&id=24ec7ff9d6&f_id=0016bdedf0&' + params.toString();
+      script.onerror = function() { showSuccess(); };
+      setTimeout(function() { if (window[cbName]) { delete window[cbName]; showSuccess(); } }, 4000);
+      document.body.appendChild(script);
+    });
+  }
+}
+</script>
+</body>
+</html>

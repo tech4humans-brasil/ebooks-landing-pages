@@ -1,0 +1,321 @@
+/* ============================================================
+   T4H — Tech for Humans
+   Colors & Type — foundational CSS variables + semantic styles
+   ============================================================
+   Source of truth: t4h-design-tokens.json + t4h-design-tokens-apresentacoes.json
+   Imagery: assets/ (gradients, raios, humano-IA, etc.)
+   ============================================================ */
+
+/* ---------- Fonts ----------
+   Inter is loaded from Google Fonts (CSS2 API). The static 18pt/28pt TTFs
+   in /fonts use the small-optical-size 'a' (rounder, more closed); the
+   Google Fonts variable axis without an opsz hint resolves to Inter's
+   default display 'a' (open double-story), matching the brand intent. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+:root {
+  /* ============================================================
+     COLOR — primitives (raw palette)
+     ============================================================ */
+
+  /* Neutrals — dark base */
+  --t4h-ink-900: #051721;        /* deepest navy — institutional dark slides */
+  --t4h-ink-800: #09252B;        /* deep teal-black */
+  --t4h-ink-700: #0B363F;        /* teal-dark — metric card dark variant */
+  --t4h-ink-600: #111C24;        /* extra-dark cool — T4H Trends bg */
+  --t4h-ink-500: #131C23;        /* PRIMARY DARK BG — most posts */
+  --t4h-ink-400: #183436;        /* secondary dark teal */
+  --t4h-ink-300: #1A4040;        /* deep teal — gradient end-stop */
+
+  /* Light surfaces */
+  --t4h-paper-white: #FFFFFF;
+  --t4h-paper-50: #F8F9FA;       /* white-cool — proposal slides */
+  --t4h-paper-100: #F6F9F8;      /* off-white — light theme end-stop */
+  --t4h-paper-200: #F2F2F2;      /* off-white neutral */
+
+  /* Mint / pale teals — light theme */
+  --t4h-mint-50: #C4EFDF;        /* mint pale — light theme bg */
+  --t4h-mint-100: #BAE2E4;       /* teal pastel */
+  --t4h-mint-200: #92D2B3;       /* mint medium — light gradient mid */
+  --t4h-mint-300: #9CC2C0;       /* corner-mint — proposal bleed */
+  --t4h-mint-400: #7AEAC1;       /* mint vibrant — secondary metric cards */
+
+  /* Greens — primary brand accents (Figma source of truth) */
+  --t4h-green-50:  rgba(72, 186, 128, 0.15);
+  --t4h-green-100: rgba(72, 186, 128, 0.18);
+  --t4h-green-200: rgba(72, 186, 128, 0.4);
+  --t4h-green-300: #5FCC9A;      /* green light — hover */
+  --t4h-green-400: #48BA80;      /* PRIMARY BRAND GREEN — Figma 141 refs */
+  --t4h-green-500: #239A78;      /* green mid / press */
+  --t4h-green-600: #06625A;      /* green-teal deep */
+  --t4h-green-700: #044A4A;      /* green deepest */
+
+  /* Teals — secondary brand accents (Trends + institutional) */
+  --t4h-teal-200: #81C4C6;
+  --t4h-teal-300: #56C4C0;       /* TRENDS teal — secondary accent */
+  --t4h-teal-400: #3CADA6;       /* mesh secondary */
+  --t4h-teal-500: #1AB19E;       /* mesh dominant — vibrant teal */
+  --t4h-teal-600: #19B99C;       /* metric primary */
+
+  /* ============================================================
+     COLOR — semantic (usage-named)
+     ============================================================ */
+
+  /* Backgrounds */
+  --bg-primary:        var(--t4h-ink-500);
+  --bg-secondary:      var(--t4h-ink-400);
+  --bg-deep:           var(--t4h-ink-900);
+  --bg-paper:          var(--t4h-paper-50);
+  --bg-paper-alt:      var(--t4h-paper-100);
+  --bg-mint:           var(--t4h-mint-50);
+
+  /* Foreground / text */
+  --fg-on-dark:        #FFFFFF;
+  --fg-on-dark-muted:  rgba(255, 255, 255, 0.65);
+  --fg-on-dark-subtle: rgba(255, 255, 255, 0.40);
+  --fg-on-light:       var(--t4h-ink-500);
+  --fg-on-light-muted: rgba(19, 28, 35, 0.60);
+  --fg-on-light-subtle:rgba(19, 28, 35, 0.35);
+
+  /* Accent text */
+  --fg-accent-green:   var(--t4h-green-400);
+  --fg-accent-teal:    var(--t4h-teal-300);
+
+  /* Borders */
+  --border-on-dark:    rgba(255, 255, 255, 0.20);
+  --border-on-dark-strong: rgba(255, 255, 255, 0.25);
+  --border-on-light:   rgba(19, 28, 35, 0.15);
+  --border-accent:     var(--t4h-green-400);
+  --border-accent-soft:rgba(72, 186, 128, 0.4);
+  --border-accent-deep:var(--t4h-green-700);
+
+  /* Surfaces / fills */
+  --surface-callout-green: rgba(72, 186, 128, 0.18);
+  --surface-callout-teal:  rgba(86, 196, 192, 0.15);
+  --surface-card-light:    #FFFFFF;
+  --surface-card-dark:     var(--t4h-ink-700);
+
+  /* Gradients (token snapshots — mesh blends recreated from brand renders) */
+  --grad-dark:
+    radial-gradient(ellipse 110% 120% at -5% 95%, #0E8A5E 0%, rgba(14,138,94,0.40) 30%, rgba(14,138,94,0) 78%),
+    radial-gradient(ellipse 95% 130% at 110% 65%, #1F8C84 0%, rgba(31,140,132,0.38) 35%, rgba(31,140,132,0) 80%),
+    radial-gradient(ellipse 80% 80% at 100% 105%, #2AA89A 0%, rgba(42,168,154,0) 70%),
+    radial-gradient(ellipse 90% 90% at 45% 30%, #020608 0%, #000000 100%); /* @kind other */
+
+  /* Light counterpart of grad-dark: paper base with same green & teal blobs */
+  --grad-dark-light:
+    radial-gradient(ellipse 110% 120% at -5% 95%, #6FCFA1 0%, rgba(111,207,161,0.35) 30%, rgba(111,207,161,0) 78%),
+    radial-gradient(ellipse 95% 130% at 110% 65%, #82C8C2 0%, rgba(130,200,194,0.35) 35%, rgba(130,200,194,0) 80%),
+    radial-gradient(ellipse 80% 80% at 100% 105%, #A8E0D4 0%, rgba(168,224,212,0) 70%),
+    radial-gradient(ellipse 90% 90% at 45% 30%, #FFFFFF 0%, #F0F2F2 100%); /* @kind other */
+
+  --grad-deep:
+    radial-gradient(ellipse 110% 95% at 15% 25%, #0D7066 0%, rgba(13,112,102,0.55) 35%, rgba(13,112,102,0) 80%),
+    radial-gradient(ellipse 100% 90% at 80% 50%, #186B42 0%, rgba(24,107,66,0.45) 40%, rgba(24,107,66,0) 80%),
+    radial-gradient(ellipse 95% 80% at 45% 95%, #094048 0%, rgba(9,64,72,0) 75%),
+    linear-gradient(180deg, #03161A 0%, #04212A 100%); /* @kind other */
+
+  --grad-light:
+    radial-gradient(ellipse 55% 55% at 82% 18%, #B6E7D2 0%, rgba(182,231,210,0) 60%),
+    radial-gradient(ellipse 90% 90% at 30% 70%, #F2F4F4 0%, #E9ECEC 100%); /* @kind other */
+
+  /* Mesh gradient — institutional cover: dark grey base + single green detail */
+  --grad-mesh-cover:
+    radial-gradient(ellipse 95% 75% at 50% 115%, #1FB39A 0%, rgba(31,179,154,0.55) 25%, rgba(31,179,154,0) 70%),
+    linear-gradient(180deg, #131C23 0%, #1A2329 55%, #232C30 100%); /* @kind other */
+
+  /* Corner bleed — proposal slides: lighter green + soft green hint bottom-right */
+  --grad-corner-bleed:
+    radial-gradient(ellipse 65% 70% at 0% 0%, #B5E4C4 0%, rgba(181,228,196,0) 55%),
+    radial-gradient(ellipse 55% 60% at 100% 100%, #D4ECDC 0%, rgba(212,236,220,0) 65%),
+    var(--bg-paper); /* @kind other */
+
+  /* Corner bleed dark — dark counterpart for dark slides */
+  --grad-corner-bleed-dark:
+    radial-gradient(ellipse 65% 70% at 0% 0%, #1F8C5E 0%, rgba(31,140,94,0) 55%),
+    radial-gradient(ellipse 55% 60% at 100% 100%, #1A6E54 0%, rgba(26,110,84,0) 65%),
+    #0E1518; /* @kind other */
+
+  /* Accent — bright green/teal hero */
+  --grad-accent:
+    radial-gradient(ellipse 75% 80% at 100% 10%, #6EE3B6 0%, rgba(110,227,182,0) 65%),
+    radial-gradient(ellipse 70% 80% at 0% 100%, #2BC8A6 0%, rgba(43,200,166,0) 65%),
+    linear-gradient(135deg, #48BA80 0%, #19B99C 60%, #1A9E94 100%); /* @kind other */
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+
+  --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, sans-serif; /* @kind font */
+
+  --fw-light: 300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+
+  /* Type scale — presentations (1920×1080) */
+  --fs-metric:     80px;   /* metric card numbers */
+  --fs-display:    56px;   /* hero headlines, cover */
+  --fs-heading:    36px;   /* slide title */
+  --fs-subheading: 22px;   /* slide subtitle */
+  --fs-body:       16px;   /* body */
+  --fs-caption:    14px;   /* captions, bullet labels */
+  --fs-meta:       13px;   /* slide-header metadata */
+
+  /* Type scale — social posts (1080×1080) */
+  --fs-display-social:    64px;
+  --fs-heading-social:    40px;
+  --fs-subheading-social: 28px;
+  --fs-body-social:       20px;
+  --fs-label:             16px;
+
+  /* Line heights */
+  --lh-tight:   1.10; /* @kind other */
+  --lh-snug:    1.20; /* @kind other */
+  --lh-normal:  1.35; /* @kind other */
+  --lh-relaxed: 1.60; /* @kind other */
+
+  /* Letter spacing */
+  --ls-tight:    -0.02em; /* @kind other */
+  --ls-normal:    0; /* @kind other */
+  --ls-wide:      0.04em; /* @kind other */
+  --ls-uppercase: 0.08em; /* @kind other */
+
+  /* ============================================================
+     SHAPE — radii, borders, spacing
+     ============================================================ */
+
+  --radius-sm:      4px;
+  --radius-icon:    8px;
+  --radius-cta:     10px;   /* buttons / CTAs — less rounded than chips */
+  --radius-container: 12px;
+  --radius-card:    16px;
+  --radius-pill:    999px;  /* chips, badges, eyebrow pills, header nav */
+
+  --bw-hairline: 1px; /* @kind other */
+  --bw-thin:     1.5px; /* @kind other */
+  --bw-bar:      4px; /* @kind other */
+
+  /* Spacing (presentation grid) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;     /* element gap, card gap */
+  --space-5:  24px;
+  --space-6:  32px;     /* section gap (social) */
+  --space-7:  40px;     /* section gap (presentations) */
+  --space-8:  48px;     /* page padding (social), column gap */
+  --space-9:  56px;     /* page padding V (presentations) */
+  --space-10: 80px;     /* page padding H (presentations) */
+
+  /* Elevation — sparingly used; brand favors flat surfaces + gradient bg */
+  --shadow-sm: 0 1px 2px rgba(5, 23, 33, 0.06), 0 1px 1px rgba(5, 23, 33, 0.04);
+  --shadow-md: 0 4px 12px rgba(5, 23, 33, 0.08), 0 2px 4px rgba(5, 23, 33, 0.04);
+  --shadow-lg: 0 12px 32px rgba(5, 23, 33, 0.16), 0 4px 8px rgba(5, 23, 33, 0.06);
+  --shadow-glow-green: 0 0 32px rgba(72, 186, 128, 0.35);
+  --shadow-glow-teal:  0 0 40px rgba(26, 177, 158, 0.45);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(.2,.6,.2,1); /* @kind other */
+  --ease-emphasized: cubic-bezier(.2,.8,.2,1); /* @kind other */
+  --dur-fast:   150ms; /* @kind other */
+  --dur-normal: 240ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+}
+
+/* ============================================================
+   BASE — defaults applied to body when this stylesheet is used
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  color: var(--fg-on-light);
+  background: var(--bg-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11"; /* Inter — single-storey a, simpler g */
+}
+
+/* ============================================================
+   SEMANTIC type styles — use as classes or copy into components
+   ============================================================ */
+
+.t4h-display {
+  font-family: var(--font-sans);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.t4h-metric {
+  font-family: var(--font-sans);
+  font-size: var(--fs-metric);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+.t4h-h1, h1.t4h {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+.t4h-h2, h2.t4h {
+  font-size: var(--fs-subheading);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+.t4h-body, p.t4h {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-on-light-muted);
+  margin: 0;
+}
+
+.t4h-caption {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--fg-on-light-muted);
+}
+
+.t4h-meta {
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-wide);
+  color: var(--fg-on-light-subtle);
+  text-transform: uppercase;
+}
+
+.t4h-eyebrow {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-uppercase);
+  text-transform: uppercase;
+  color: var(--fg-accent-green);
+}
+
+/* Inline accent — palavras-chave em verde dentro do corpo */
+.t4h-accent { color: var(--fg-accent-green); }
+.t4h-accent-teal { color: var(--fg-accent-teal); }
+
+/* Helpers — dark mode within a section */
+.t4h-on-dark { color: var(--fg-on-dark); }
+.t4h-on-dark .t4h-body,
+.t4h-on-dark p.t4h    { color: var(--fg-on-dark-muted); }
+.t4h-on-dark .t4h-caption { color: var(--fg-on-dark-muted); }
+.t4h-on-dark .t4h-meta    { color: var(--fg-on-dark-subtle); }
